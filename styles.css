@@ -1,0 +1,315 @@
+* {
+margin: 0;
+padding: 0;
+}
+
+
+header, footer, section, aside, nav, article {
+display: block;
+}
+
+body {
+line-height: 1;
+background-color: #a9bfe3;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+color: #666;
+font-size: 14px;
+line-height: 18px;
+}
+	
+/* layout */
+
+#wrapper {
+width: 940px;
+margin: 0 auto;
+margin-top: 10px;
+margin-bottom: 10px;
+background: #fff;
+}
+
+nav {
+width: 940px;
+height: 50px;
+margin: 0 auto;
+background: #B5C0E7;
+margin-bottom: 10px;
+}
+
+header {
+width: 850px;
+height: 200px;
+margin: 0 auto;
+background: #fff url(images/whataview.jpg) no-repeat left top;
+}
+
+#main {
+width: 940px;
+margin: 0 auto;
+background: #FFF;
+
+}
+
+footer {
+width: 940px;
+margin: 0 auto;
+clear: both;
+}
+
+/* basics */
+
+h1,h2,h3,h4,h5,h6 {
+display: block;
+font-variant: small-caps;
+line-height: 1.5em;
+padding: 10px 0;
+font-weight: bold;
+color: #000;
+}
+
+a:link, a:visited {
+color:#0F2B8F;
+text-decoration: none;
+}
+
+a:hover, a:active {
+text-decoration: underline;
+}
+
+p {
+margin-bottom: 18px;
+}
+
+li {
+padding-left: 5px;
+}
+
+/* nav */
+
+nav .menu {
+font-weight: bold;
+}
+
+nav .menu ul {
+margin: 0;
+padding: 14px 0 0 20px;
+list-style: none;
+line-height: normal;
+}
+
+nav .menu li {
+display: block;
+float: left;
+}
+
+nav .menu a {
+display: block;
+float: left;
+margin-right: 5px;
+padding: 0px 15px;
+text-decoration: none;
+font-size: 18px;
+color: #000;
+}
+
+nav .menu a:hover {
+text-decoration: underline;
+}
+
+/** HEADER */
+
+header h1 {
+margin: 0;
+padding: 0 0 0 10px;
+line-height: normal;
+float: left;
+padding-top: 10px;
+}
+
+header h1 a:link, header h1 a:visited {
+text-decoration: none;
+color: #E6E8F1;
+font-size: 44px;
+}
+
+header h1 a:hover { 
+text-decoration: underline; 
+}
+
+/** ARTICLES **/
+
+article {
+margin-bottom: 10px;
+}
+
+article img {
+border: none;
+}
+
+.alignleft, img.alignleft {
+display: inline;
+float: left;
+margin-right: 8px;
+}
+
+.alignright, img.alignright {
+display: inline;
+float: right;
+margin-left: 8px;
+}
+
+.aligncenter, img.aligncenter {
+clear: both;
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+#triplecols, #doublecols, #singlecol, #singlenewspaper {
+width: 850px;
+margin-left: 40px;
+margin-top: 20px;
+border-bottom: 1px solid #ddd;
+}
+
+/* triple blocks of images and captions */
+
+.tripleblocks {
+	display: inline-block;
+	vertical-align: top;
+	width: 250px;
+	text-align: left;
+}
+
+.tripleleftblock {
+	margin-right: 40px;
+}
+
+.triplemiddleblock {
+	margin-right: 40px;
+}
+
+.triplerightblock {
+	margin-right: 1px;
+}
+
+.tripleblocks .thumbnail {
+	border: none;
+}
+
+.tripleblocks .caption {
+	display: block;
+	font-size: 20px;
+	font-variant: small-caps;
+	line-height: 1.5em;
+}
+
+.tripleblocks p {
+margin-top: 5px;
+text-align: justify;
+}
+
+/* double blocks of content */
+
+.doubleblocks {
+	display: inline-block;
+	vertical-align: top;
+	width: 400px;
+	text-align: left;
+}
+
+.doubleleftblock {
+	margin-right: 40px;
+}
+
+.doublerightblock {
+	margin-right: 2px;
+}
+
+.doubleblocks p {
+text-align: justify;
+}
+
+/* single block of content */
+
+.singleblock {
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+}
+
+.singleblock p {
+text-align: justify;
+}
+
+.newspaper_columns {
+	text-align: justify;
+	-moz-column-count: 2;
+	-moz-column-gap: 1.5em;
+	-moz-column-rule: 1px solid #C7B5A7;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 1.5em;
+	-webkit-column-rule: 1px solid #C7B5A7;
+	}
+
+/* footer widget blocks */
+
+aside h3 {
+font-size: 18px;
+}
+
+aside ul {
+list-style: none;
+margin-bottom: 20px;
+margin-top: -15px;
+}
+
+aside li a {
+display: block;
+text-decoration: none;
+}
+
+aside li a:hover {
+text-decoration: underline;
+}
+
+#footer-area {
+background: #a9bfe3;
+color: #efefef;
+font-size: 90%;
+padding: 18px 0;
+overflow: hidden;
+}
+
+.footer-segment {
+float: left;
+width: 190px;
+}
+
+.first {
+margin-right: 20px;
+margin-left: 40px;
+}
+
+.second {
+margin-right: 30px;
+}
+
+.third {
+margin-right: 30px;
+}
+
+.last {
+margin-right: 20px;
+}
+
+footer aside h3 {
+color: #000;
+}
+
+footer p {
+margin-top: -15px;
+color: #333;
+float:right;
+}
+
+
