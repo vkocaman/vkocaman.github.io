@@ -1,59 +1,75 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Find Ticker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <style>
-      .container {
-        max-width: 1000px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-5 col-sm-offset-1">
-          <h1>Find Ticker v1.3</h1>
-          <br>
-          <form role="form" method="POST" action="/">
-            <div class="form-group">
-              <input type="text" name="url" class="form-control" id="url-box" placeholder="Enter company name..." style="max-width: 300px;">
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-          </form>
-          <br>
-          {% for error in errors %}
-            <h4>{{ error }}</h4>
-          {% endfor %}
-          <br>
-        </div>
-        <div class="col-sm-5 col-sm-offset-1">
-          {% if results %}
-            <h2>Result</h2> 
-            <br>
-            <div id="results">
-              <table class="table table-striped" style="max-width: 300px;">
-                <thead>
-                  <tr>
-                    <th>Key</th>
-                    <th>Value</th>
-                  </tr>
-                </thead>
-                {% for x,y in results.items()%}
-                  <tr>
-                    <td>{{ x }}</td>
-                    <td>{{ y }}</td>
-                  </tr>
-                {% endfor %}
-              </table>
-            </div>
-          {% endif %}
-        </div>
-      </div>
-    </div>
-    <br><br>
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-  </body>
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>CSV to HTML</title>
+	<link rel="stylesheet" href="styles.css" type="text/css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="csvtable.css" title="style" />
+
+	<link rel="stylesheet" type="text/css" href="print.css" media="print" />
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.csvToTable.js"></script>
+	<script type="text/javascript" src="js/jquery.tablesorter.dev.js"></script>
+	
+	<script>
+	$(function() {
+		$.get('example.csv', function(data) {
+			$('#CSVSource').html('<pre>' + data + '</pre>');
+		});
+		$('#CSVTable').CSVToTable('example.csv', { loadingImage: 'images/loading.gif', startLine: 0 });
+		$.get('test.tsv', function(data) {
+			$('#TSVSource').html('<pre>' + data + '</pre>');
+		});
+		$('#TSVTable').CSVToTable('test.tsv', { loadingText: 'Loading TSV Data...', loadingImage: 'images/loading.gif', startLine: 0, separator: "\t" });
+		$('#CSVTable2').CSVToTable('example.csv', { loadingImage: 'images/loading.gif', startLine: 1, headers: ['Album Title', 'Artist Name', 'Price ($USD)'] }).bind("loadComplete",function() { 
+			$('#CSVTable2').find('TABLE').tablesorter();
+		});;
+	});
+	</script>
+</head>
+<body>
+<div id="wrapper"><!-- #wrapper -->
+
+	
+	
+	<header><!-- header -->
+       <h1><a href="#">CSV to HTML example</a></h1>
+	</header><!-- end of header -->
+	
+	<section id="main"><!-- #main content area -->
+
+
+
+<!-- One single column, one article at a time, across entire width -->				
+				<section id="singlecol">
+				    
+				  
+				<h2>Original CSV (comma separated values) source of <a href="test.csv">test.csv</a>:</h2><br>
+<div id="CSVSource" class="source">
+</div>
+
+<br><br>
+<h2>CSV To Table:</h2><br>
+<div id="CSVTable">
+
+</div>
+<br>
+			  </section>
+
+	</section><!-- end of #main content -->
+	
+		<footer>
+		<section id="footer-area">
+		
+											<p>&copy; 2012 <a href="http://www.panayiotisgeorgiou.net"></a> Panayiotis Georgiou | IT Services</p>
+
+
+		</section><!-- end of footer-area -->
+	</footer>
+	
+</div><!-- #wrapper -->
+<!-- Free template created by http://freehtml5templates.com -->
+</body>
 </html>
